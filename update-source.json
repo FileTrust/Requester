@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "product": "req",
+  "repository": "FileTrust/Requester",
+  "metadata_tag": "filetrust-updates",
+  "channel": "stable"
+}

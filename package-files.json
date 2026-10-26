@@ -1,0 +1,381 @@
+{
+  "files": {
+    ".dockerignore": {
+      "mode": 420,
+      "sha256": "aba8d881e17323fdc976d4ab992e46bbabcf8f6b3bb15057ca08b25597123ee1",
+      "size": 1732
+    },
+    ".gitignore": {
+      "mode": 420,
+      "sha256": "f5929783e13938f972d7186fe0ff64e0b712a6b90a442132810f6bc85da4842a",
+      "size": 1114
+    },
+    "Dockerfile": {
+      "mode": 420,
+      "sha256": "9483793ac8d3f1168f82ee8ede1700de6201550c4a865b4623372fdb91a15ee3",
+      "size": 1259
+    },
+    "LICENSE": {
+      "mode": 420,
+      "sha256": "cc44a1cf96403306f3fea9d8d73e6a177c34b8df8b96b62a4834c7425e1dca15",
+      "size": 3773
+    },
+    "README.md": {
+      "mode": 420,
+      "sha256": "cbe117deaeacd0bfc6c63cb0dfec7886a83715c38316fbe9ed67de03f7f5d045",
+      "size": 13786
+    },
+    "REQ.py": {
+      "mode": 493,
+      "sha256": "9edd38b08d36512c4d57a2f5a5ad24417694b10119bae13f8f9b5585070fd189",
+      "size": 4711
+    },
+    "THIRD-PARTY-NOTICES.md": {
+      "mode": 420,
+      "sha256": "ae049070ab76023311b735d40f7fc379e777eb99b02a5ccc2bf9e4ca6826301c",
+      "size": 1411
+    },
+    "VERSION": {
+      "mode": 420,
+      "sha256": "71015c979ccb0fc8a0be7ca0ae83046ab045cdc2c8faa09fb2f0f7e440f9b4a6",
+      "size": 6
+    },
+    "compose.desktop.yaml": {
+      "mode": 420,
+      "sha256": "73098d7b9456ccc015d9de0a497d3a45b285c6def5bfdd9782f7c73a921866a6",
+      "size": 268
+    },
+    "compose.yaml": {
+      "mode": 420,
+      "sha256": "74f9e68d08bcd04b4bfc48658d3556107eadcf0702d2228f46c619c43c06851d",
+      "size": 1261
+    },
+    "config.default.json": {
+      "mode": 420,
+      "sha256": "6ae14fd46d124af250b4ba7343037ac7ddb3c8bbe7198dbe7bffd527df5729eb",
+      "size": 2974
+    },
+    "container_cli.py": {
+      "mode": 420,
+      "sha256": "8e13a1408c07623ee101f9fe4bd463cf319ab03b5f25c7c56259a5c1fbac860d",
+      "size": 16406
+    },
+    "core/__init__.py": {
+      "mode": 420,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size": 1
+    },
+    "core/assets/icon.png": {
+      "mode": 420,
+      "sha256": "db2afa99fdf7663b8ac42a2299591f203720f1548d48860430e39d57e68b50f5",
+      "size": 41158
+    },
+    "core/assets/logo.png": {
+      "mode": 420,
+      "sha256": "aa797d702bb6d337da5301deda7f8ccb71e779721fb3157d32590f7f671dc720",
+      "size": 17016
+    },
+    "core/contracts/AccessControlFT.json": {
+      "mode": 420,
+      "sha256": "1adf24101ebb952b5e8924a54a2025d2f6b700204197a4ed003791de3619a6bc",
+      "size": 81436
+    },
+    "core/contracts/DataVault.json": {
+      "mode": 420,
+      "sha256": "de74937e94bbb7b094ca33a0fe5f8e3042fe9d5724d0f97d98950a091ebc0dc6",
+      "size": 132983
+    },
+    "core/contracts/FileRegistrationSC.json": {
+      "mode": 420,
+      "sha256": "cd209ccc4b0ae7d27ec6ad8f3f5116ad2e238e8d503d33f5c2a01977628aa98e",
+      "size": 125461
+    },
+    "core/contracts/GuardianRegistry.json": {
+      "mode": 420,
+      "sha256": "551e8bdf9784731506907ba64293b8416dfedb1ad6e9d7f147055a8842fae44d",
+      "size": 90718
+    },
+    "core/contracts/RewardManager.json": {
+      "mode": 420,
+      "sha256": "bbe4353dc86c88c37e131e7e75023a3e66b41a75425455f091ac57509e6a2548",
+      "size": 168183
+    },
+    "core/contracts/StorageReceiptDispute.json": {
+      "mode": 420,
+      "sha256": "6c5b0a437fa46a4fe0b227173c13fe21c027e2e57be4e9c65e87288bdfebd7ab",
+      "size": 128768
+    },
+    "core/contracts/TElGv2.json": {
+      "mode": 420,
+      "sha256": "017eac984c1ab3d0fe5f98caf4c29fc8134a487971ee132eb3c1a5a9ab1d8800",
+      "size": 104685
+    },
+    "core/contracts/VKEscrow.json": {
+      "mode": 420,
+      "sha256": "8984b9f7d7741ed3c3de82c027cb33c133cc023b5704ea04b021c1a422dc046b",
+      "size": 102626
+    },
+    "core/contracts/VaultKeeperRegistry.json": {
+      "mode": 420,
+      "sha256": "f4a66313ac82c3be08136217ef7cd7e9cafb7ac07383fe14dba7da847503fdb6",
+      "size": 82768
+    },
+    "core/contracts/ZkDkgCoordinatorV2.json": {
+      "mode": 420,
+      "sha256": "f9148bedc32f8aace030d045395fea589f47bb82c43425ff20738b4dbc3930ca",
+      "size": 133518
+    },
+    "core/ft_desktop_lifecycle.py": {
+      "mode": 420,
+      "sha256": "585b2cbb9b35824b8c8e972c0f9683b489237817e73573ac55649173b17a107d",
+      "size": 379
+    },
+    "core/ft_discovery.py": {
+      "mode": 420,
+      "sha256": "6957b4d0e15ee687065fcf9ccad81615a6be43e6ad13818fa9f3c208ac9c0f4b",
+      "size": 2908
+    },
+    "core/ft_keyvault.py": {
+      "mode": 420,
+      "sha256": "a616c8105cc139413c2136c25d63d6ca7be8380e17dae2781a66fff4179f5eab",
+      "size": 36923
+    },
+    "core/ft_netconfig.py": {
+      "mode": 420,
+      "sha256": "2eb8ba0fc2ae34719e1b9269259d44c2b331c159330cf5873c9feafe25b2678d",
+      "size": 14460
+    },
+    "core/ft_network_config.py": {
+      "mode": 420,
+      "sha256": "ce8020089ab1ad4d5c1b00ef7daa45175ae6734cf96f500adba7a73d5724fb8c",
+      "size": 24223
+    },
+    "core/ft_network_http.py": {
+      "mode": 420,
+      "sha256": "3e7f3fe37a01e325f1cb2ef432e428629b694651327393d470e6b27d27217b97",
+      "size": 5179
+    },
+    "core/ft_unlock.py": {
+      "mode": 420,
+      "sha256": "6886323ac0984715b4cb633a5d6525818228e341cc1ba96b7b5bb34175ee08a8",
+      "size": 7703
+    },
+    "core/ft_update_bootstrap.py": {
+      "mode": 420,
+      "sha256": "1d513ffc0079dada6942f4d5f67530629d8da26b97d80e39a57bdecf37dbcee9",
+      "size": 8661
+    },
+    "core/ft_update_ui.py": {
+      "mode": 420,
+      "sha256": "a9e3b84e8c15a6604ffbe15b305f8d5584827c54df81c5ceba11bccbe009306a",
+      "size": 7157
+    },
+    "core/ft_updates.py": {
+      "mode": 420,
+      "sha256": "16f258f2cf8fca42fa219ba27a7323dbbf6909ff81a45c3d74f2c3b23bde786b",
+      "size": 16885
+    },
+    "core/log_archive.py": {
+      "mode": 420,
+      "sha256": "e00e45fd16935db543bc85dfcf688889ace3ce42e4c2e6337e04b0c853deb06b",
+      "size": 11250
+    },
+    "core/req_actions.py": {
+      "mode": 420,
+      "sha256": "2ce90a0901d4094d162c573417647f5792f7fcd2c21bcddd327a15bf2449f2e6",
+      "size": 87322
+    },
+    "core/req_chain.py": {
+      "mode": 420,
+      "sha256": "027de299e135aeff20302d90d8c8758f32972cb00a23116e857dfdb6d1c2806b",
+      "size": 36877
+    },
+    "core/req_config.py": {
+      "mode": 420,
+      "sha256": "284baf48fc4a2d0d4edab3d8ddbbc87e0d3d007772537fb599cc9f387e1bfd2b",
+      "size": 18281
+    },
+    "core/req_crypto.py": {
+      "mode": 420,
+      "sha256": "586270aefbba2ed64a59ca19c72f689c9a60c9fcca4f5efcc353660893a642ed",
+      "size": 14652
+    },
+    "core/req_log.py": {
+      "mode": 420,
+      "sha256": "b5dc78ddba934085545b36373bba012739258ff92f968bedda8bb9a14a482ffd",
+      "size": 7211
+    },
+    "core/req_panels.py": {
+      "mode": 420,
+      "sha256": "a40c3d0e218a70b59a86c0711974dd876f4893f559c490dc979d561e1c044696",
+      "size": 11616
+    },
+    "core/req_progress.py": {
+      "mode": 420,
+      "sha256": "64b68cdcbb99fe30a79947a34ee420f5a7a3bb6e86f25d265246df550afaa39f",
+      "size": 4815
+    },
+    "core/req_records.py": {
+      "mode": 420,
+      "sha256": "c6161fba231f9560fed85baaa6fbfff33841de8524a739b695ed446e340f8778",
+      "size": 12033
+    },
+    "core/req_rpc.py": {
+      "mode": 420,
+      "sha256": "c773e24365fade089897f9e6ecceef6e9eb67b76046e694c37404eb4a7087b15",
+      "size": 4878
+    },
+    "core/req_state.py": {
+      "mode": 420,
+      "sha256": "7b9415401b1d4d46d5eb72575a47c423b8ee2a0a1db75b470a352e3e28029f33",
+      "size": 2407
+    },
+    "core/req_transfer_manager.py": {
+      "mode": 420,
+      "sha256": "429b5efb6c0e76fc0b7cbfc13d252ea3298aec87a7d09d58fbcdd8243de9463e",
+      "size": 6956
+    },
+    "core/req_tray.py": {
+      "mode": 420,
+      "sha256": "0ecddaa537553a12c3dc80320f8e9d66c66ab5c7aa0e070330ccb44b36037898",
+      "size": 11923
+    },
+    "core/req_trusted.py": {
+      "mode": 420,
+      "sha256": "c4fde276418786e6c06d8340d7816b5d3b4e8f670c3eda905a4464cafffc244b",
+      "size": 6449
+    },
+    "core/req_txlog.py": {
+      "mode": 420,
+      "sha256": "18fa617845e47e40460c29cccd19c514fc9be7066dedcac29de28a14bf752293",
+      "size": 8401
+    },
+    "core/req_ui.py": {
+      "mode": 420,
+      "sha256": "1347f22dab4c997fcdede9cdf89f93fbd00e58303f48661b64aab7837466d748",
+      "size": 26608
+    },
+    "core/req_ui_bootstrap.py": {
+      "mode": 420,
+      "sha256": "3f690cb5e8dca53c15191d10ed6a904b648d526cbacc467ff30606942b708357",
+      "size": 11766
+    },
+    "core/req_v2_crypto.py": {
+      "mode": 420,
+      "sha256": "4a1ef4277cfc1d22f27e156c897cf66fdb3ca66c39a8534f583904f6c273c2c7",
+      "size": 4090
+    },
+    "core/req_vaultmesh.py": {
+      "mode": 420,
+      "sha256": "fec89b6ff8742a7899d61515580a72293a551e09a92599f15df1ef54cdf95434",
+      "size": 19689
+    },
+    "docker.sh": {
+      "mode": 493,
+      "sha256": "25e1ae93fe6d1cb71d80c8728267c44a855462cb210ec477ae3a451754f26974",
+      "size": 11684
+    },
+    "ft_package.py": {
+      "mode": 420,
+      "sha256": "ccead9f8538e5898b5bbc5e4d6850e9df64e3973c9cb2f24b7c6ec3b4484c050",
+      "size": 12474
+    },
+    "ft_transfer.py": {
+      "mode": 420,
+      "sha256": "2fe56a009ced1daff99f38b844b7ff3bf9455d01db3e0b877746cca70ca5e027",
+      "size": 5821
+    },
+    "ft_update_bootstrap.py": {
+      "mode": 420,
+      "sha256": "1d513ffc0079dada6942f4d5f67530629d8da26b97d80e39a57bdecf37dbcee9",
+      "size": 8661
+    },
+    "ft_update_install.py": {
+      "mode": 420,
+      "sha256": "cd7e8f51bbc1ca08bf37f237dc794979110c2aa506f48ef8a185002cc65a6fb4",
+      "size": 17290
+    },
+    "ft_update_service.py": {
+      "mode": 420,
+      "sha256": "b13693989df5cf3af4a076f7d4157e9e3477517d55781a1897f7308b38b18003",
+      "size": 8591
+    },
+    "github_auth.py": {
+      "mode": 420,
+      "sha256": "5343cded019a4881cc93c7c88a419e5b517fab3509df56f4d51ca3b09bdf4d54",
+      "size": 2136
+    },
+    "install.sh": {
+      "mode": 493,
+      "sha256": "febdfb9447847eff81aa67c062ed59ffe445959bea8a7e439610b5959ed3354e",
+      "size": 36543
+    },
+    "licenses/securesystemslib-MIT.txt": {
+      "mode": 420,
+      "sha256": "6357addf59ba70a824bc678c35e0936916e1cc38182f503372147191ed227bd3",
+      "size": 1082
+    },
+    "licenses/tuf-APACHE-2.0.txt": {
+      "mode": 420,
+      "sha256": "d3174ad63e721d4c9dccb8ad4320848992d314369bc46319720b5802c9153fe9",
+      "size": 9694
+    },
+    "licenses/tuf-MIT.txt": {
+      "mode": 420,
+      "sha256": "ad52fe92b0d21a9b3733b484eb6f865e83855f4a6f9b9b8812b9012dc4587d27",
+      "size": 1086
+    },
+    "licenses/vaultmesh-THIRD-PARTY-NOTICES.txt": {
+      "mode": 420,
+      "sha256": "894b1c122fdcd06838cadaeb2f72ff46390c1a1241d4642adb37602acdb787ac",
+      "size": 385031
+    },
+    "network-config.py": {
+      "mode": 493,
+      "sha256": "4ea7d57ac39029c9dc6de159bfa4161abab6626c4e48a8a591053f87a39b914e",
+      "size": 296
+    },
+    "package_prerequisites.sh": {
+      "mode": 493,
+      "sha256": "17d5461c536729261867744b7864ee3db949a12796a904264ef43ac3785b6ea6",
+      "size": 1169
+    },
+    "requirements.txt": {
+      "mode": 420,
+      "sha256": "f5a8660e6be1bb039f1bdbaca147dd2e88a11a7c532ab9057197fb3486eca86c",
+      "size": 2663
+    },
+    "uninstall.py": {
+      "mode": 493,
+      "sha256": "30b2a840fc4b607c8545d49c299a566cb11b574d341aeabd826a784d150b32c1",
+      "size": 212
+    },
+    "update-root.json": {
+      "mode": 420,
+      "sha256": "3284163cc9835a36f73eba50bfc73cd69dcdf6e8898ed20880112ca8cdf58013",
+      "size": 1568
+    },
+    "update-source.json": {
+      "mode": 420,
+      "sha256": "6648102fb0fba58f8bcfe7ffed4a0b8df3440ac8309a6fbf2fe1d7470ef64923",
+      "size": 139
+    },
+    "update.py": {
+      "mode": 493,
+      "sha256": "c7399b764aa1c72a053a57ae7b6cf2c74debd03ef582e8e1027cda69222761f1",
+      "size": 241
+    },
+    "upgrade.py": {
+      "mode": 493,
+      "sha256": "ee81935ae7675b0f9702e0aabbadca0978b10d01d5ccfaa7f2f1e3912c494bf2",
+      "size": 1885
+    },
+    "vaultmesh-release.json": {
+      "mode": 420,
+      "sha256": "0031d7f91ebaf0cf19f097707d7b2ccb1d1b5ae3c7a494a5b2b2be7c20bd1404",
+      "size": 510
+    }
+  },
+  "product": "req",
+  "schema": 1
+}
