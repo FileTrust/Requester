@@ -37,7 +37,7 @@
     },
     "VERSION": {
       "mode": 420,
-      "sha256": "71015c979ccb0fc8a0be7ca0ae83046ab045cdc2c8faa09fb2f0f7e440f9b4a6",
+      "sha256": "998f6b887ed7a6ef44e84210d0237b715bed42ea7254f48dc418afec0a484103",
       "size": 6
     },
     "compose.desktop.yaml": {
@@ -372,8 +372,8 @@
     },
     "vaultmesh-release.json": {
       "mode": 420,
-      "sha256": "0031d7f91ebaf0cf19f097707d7b2ccb1d1b5ae3c7a494a5b2b2be7c20bd1404",
-      "size": 510
+      "sha256": "db2df6b310e1682a58dbccb0dcacaff1d99b03114f36e916c0ce640a8c9ae831",
+      "size": 584
     }
   },
   "product": "req",
