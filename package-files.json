@@ -147,8 +147,8 @@
     },
     "core/ft_network_config.py": {
       "mode": 420,
-      "sha256": "8f6a17d02407bf873d5382c0dbf20d5344e1d389f8d8afb662a2c98c6fef3db1",
-      "size": 28161
+      "sha256": "21355d16ab3303427e35dbed6f12f08e339034e127522e223544179a877a841b",
+      "size": 30333
     },
     "core/ft_network_http.py": {
       "mode": 420,
@@ -292,8 +292,8 @@
     },
     "ft_update_install.py": {
       "mode": 420,
-      "sha256": "cd7e8f51bbc1ca08bf37f237dc794979110c2aa506f48ef8a185002cc65a6fb4",
-      "size": 17290
+      "sha256": "464518d9db4e20312dad2a1ef44c65942c36312983f7a61549df93a6cda00403",
+      "size": 18733
     },
     "ft_update_service.py": {
       "mode": 420,
