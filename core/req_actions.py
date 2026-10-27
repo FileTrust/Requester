@@ -1150,11 +1150,10 @@ def _find_prior_request_id(
 
 def _check_reusable_request(
     w3, dv, req_checksum: str, file_id: bytes, batch_id: int, pkreq_x: int, pkreq_y: int
-) -> int | None:
+) -> tuple[int, str] | None:
     """
-    Return a prior requestId if the same (requester, fileId, batchId, pkReqX, pkReqY)
-    was already used and the decrypted keys are either cached locally or V2 PRE partials
-    are still on-chain. Returns None when nothing reusable is found.
+    Return (requestId, flow) for matching completed access or a funded request
+    still awaiting partials. Pending work must be resumed rather than duplicated.
     """
     try:
         prior_id = _find_prior_request_id(w3, dv, req_checksum, file_id, batch_id, pkreq_x, pkreq_y)
@@ -1167,15 +1166,23 @@ def _check_reusable_request(
         local_file = R.reenc_cids_path(prior_id)
         if local_file.exists():
             L.log(f"[Flow] Reusing request #{prior_id}: local decrypted keys file exists.")
-            return prior_id
+            return prior_id, "reuse"
 
         # Slow path: V2 PRE partials may still be on-chain from the previous request
         L.log(f"[Flow] Attempting to aggregate on-chain V2 partials for request #{prior_id}...")
         if CH.build_reenc_cids_from_pre_partials(prior_id):
             L.log(f"[Flow] Reusing request #{prior_id}: V2 PRE partials available on-chain.")
-            return prior_id
+            return prior_id, "reuse"
 
-        L.log(f"[Flow] Prior request #{prior_id} found but partials not ready. Creating new request.")
+        reward_addr = getattr(C.config, "REWARD_MANAGER_ADDRESS", "")
+        reward_json = getattr(C.config, "REWARD_MANAGER_JSON", "")
+        if reward_addr and reward_json:
+            rewards = C.load_contract_from_config(w3, reward_addr, reward_json)
+            if rewards.functions.hasV2AccessEscrow(prior_id).call():
+                L.log(f"[Flow] Resuming funded request #{prior_id}; waiting for Guardian partials.")
+                return prior_id, "pending"
+
+        L.log(f"[Flow] Prior request #{prior_id} has no reusable partials or remaining access escrow.")
         return None
 
     except Exception as exc:
@@ -1266,13 +1273,14 @@ def run_request_data_flow():
         L.log(f"[DV] DataOwner: {data_owner}")
 
         # Check if the same (requester, fileId, batchId, pubkey) was already processed
-        reuse_id = _check_reusable_request(w3, dv, req_checksum, file_id, batch_id, pkreq_x, pkreq_y)
-        if reuse_id is not None:
+        reuse = _check_reusable_request(w3, dv, req_checksum, file_id, batch_id, pkreq_x, pkreq_y)
+        if reuse is not None:
+            reuse_id, reuse_flow = reuse
             S.current_request_id = reuse_id
             S.current_n = int(n_on)
             S.current_t = int(t_on)
             S.current_file_ext = ""
-            return "reuse"
+            return reuse_flow
 
         is_req           = acl.functions.isRequester(req_checksum).call()
         is_req_for_file  = acl.functions.isRequesterForFile(file_id, req_checksum).call()
@@ -2088,7 +2096,7 @@ def _run_all_impl(quiet: bool = False) -> bool:
         return False
     PROG.step("access requested", 1, 1)
 
-    if result == "new":
+    if result in ("new", "pending"):
         max_attempts = int(getattr(C.config, "PRE_PARTIAL_WAIT_MAX_ATTEMPTS", 24))
         delay_sec = int(getattr(C.config, "PRE_PARTIAL_WAIT_DELAY_SEC", 2))
         if not wait_for_pre_partials_sync(S.current_request_id, max_attempts=max_attempts, delay_sec=delay_sec):
