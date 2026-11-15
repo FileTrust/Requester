@@ -2,6 +2,7 @@
 
 import atexit
 import datetime
+import sys
 import threading
 import time
 import tkinter as tk
@@ -16,7 +17,7 @@ _BG  = "#1F2641"; _SRF = "#2A3355"; _ACC = "#FFD700"; _ACH = "#e6c200"
 _T1  = "#FFFFFF"; _T2  = "#8899cc"; _MUT = "#3E497A"; _FNT = "Catamaran"
 _RED = "#f87171"; _AMB = "#fde68a"; _SKY = "#7dd3fc"
 
-_LOG_LOCK = threading.Lock()
+_LOG_LOCK = threading.RLock()
 _LOG_FILE = None
 _LOG_STATE: dict = {}
 
@@ -45,6 +46,8 @@ def _start_log_archiver() -> None:
         log_archive.start_daily(
             C.LOG_DIR,
             keep_days_by_name={"transactions": 90, "calls": 3},
+            io_lock=_LOG_LOCK,
+            before_rotate=_ensure_current_log,
             on_done=lambda s: s.get("rotated") and _write_raw(
                 f"[log-archive] zipped {s['rotated']}, removed "
                 f"{s['deleted_old'] + s['deleted_for_size']} old archive(s)"
@@ -72,17 +75,33 @@ def _close_file_logger() -> None:
 atexit.register(_close_file_logger)
 
 
+def _ensure_current_log() -> None:
+    global _LOG_FILE
+    if _LOG_FILE is None:
+        return
+    from pathlib import Path
+    target = Path(_LOG_FILE.name).parent / ("req_" + datetime.datetime.now().strftime("%Y-%m-%d") + ".log")
+    if Path(_LOG_FILE.name) != target or not target.exists():
+        _LOG_FILE.close()
+        _LOG_FILE = open(target, "a", encoding="utf-8", buffering=1)
+
+
 def _write_raw(line: str) -> None:
     if _LOG_FILE is None:
         return
     with _LOG_LOCK:
         try:
+            _ensure_current_log()
             _LOG_FILE.write(line + "\n")
         except Exception:
             pass
 
 
 def _write_log(level: str, text: str, tag: str = "") -> None:
+    if sys.exc_info()[1] is not None:
+        from .ft_diagnostics import capture_current
+        capture_current()
+        level = "ERROR"
     if _LOG_FILE is None:
         return
     ts = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
@@ -116,7 +135,16 @@ def log(text: str, tag: str = "") -> None:
         return
     if threading.current_thread() is not threading.main_thread():
         if S.root is not None:
-            S.root.after(0, lambda t=text, tg=tag: log(t, tg))
+            try:
+                S.root.after(0, lambda t=text: _display_log(t))
+            except Exception:
+                pass
+        return
+    _display_log(text)
+
+
+def _display_log(text: str) -> None:
+    if S.result_text is None:
         return
     S.result_text.insert(tk.END, text + "\n")
     S.result_text.see(tk.END)

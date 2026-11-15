@@ -28,6 +28,8 @@
 !core/contracts/VaultKeeperRegistry.json
 !core/contracts/ZkDkgCoordinatorV2.json
 !core/ft_desktop_lifecycle.py
+!core/ft_diagnostics.py
+!core/ft_diagnostics_policy.json
 !core/ft_discovery.py
 !core/ft_keyvault.py
 !core/ft_netconfig.py
@@ -56,6 +58,7 @@
 !core/req_ui_bootstrap.py
 !core/req_v2_crypto.py
 !core/req_vaultmesh.py
+!diagnostics.py
 !docker.sh
 !ft_package.py
 !ft_transfer.py

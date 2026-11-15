@@ -351,6 +351,8 @@ def build_ui() -> None:
     ctk.set_default_color_theme("blue")
 
     S.root = ctk.CTk()
+    from .ft_diagnostics import start as start_diagnostics
+    start_diagnostics(root=S.root)
     S.root.title("Requester Dashboard")
     S.root.geometry("1280x860")
     S.root.minsize(1100, 700)
@@ -671,6 +673,8 @@ def build_ui() -> None:
     from .ft_update_ui import attach
     from . import req_progress
     attach(S.root, Path(__file__).resolve().parents[1], busy=req_progress.is_running)
+    from .ft_diagnostics import attach_menu as attach_diagnostics_menu
+    attach_diagnostics_menu(S.root)
     from .ft_update_bootstrap import ready
     ready(Path(__file__).resolve().parents[1])
     if __import__('os').environ.get('FILETRUST_CONTAINER') == '1':

@@ -121,6 +121,8 @@ def _unlock_account() -> None:
 _restart_in_app_environment()
 
 if __name__ == "__main__":
+    from core.ft_diagnostics import start
+    start(home=_this_dir)
     _unlock_account()
     _require_account()
     from core.req_ui import build_ui
